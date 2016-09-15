@@ -19,7 +19,7 @@ mongoClient.connect(url,function(err,db){
     }
     else{
         console.log('***************Successfully connected to mongodb');
-		var collectionName=process.argv[2]
+		var collectionName=process.argv[3]
         var collection  = db.collection(collectionName);
         var fs          = require('fs');
         var readline    = require('readline');
