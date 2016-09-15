@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var mongoDb         = require('mongodb');
 var mongoClient     = mongoDb.MongoClient;
 
