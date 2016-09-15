@@ -1,0 +1,17 @@
+{
+  "name": "populate-conditions",
+  "version": "1.0.0",
+  "description": "The module will populate the medical conditions in database",
+  "main": "script.js",
+  "bin":{
+    "populate-icd-conditions":"./script.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+  "mongodb":"2.2.9"
+  },
+  "author": "Gaurav Makkar",
+  "license": "ISC"
+}
