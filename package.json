@@ -1,6 +1,6 @@
 {
   "name": "populate-conditions",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "The module will populate the medical conditions in database",
   "main": "script.js",
   "bin": {
