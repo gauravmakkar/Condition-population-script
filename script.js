@@ -8,7 +8,7 @@ if(process.argv.length<3){
 }
 // var dbname          = process.argv[2];
 // var url             = 'mongodb://localhost:27017/'+dbname;
-var url             = process.argv[1];
+var url             = process.argv[2];
 //var filename        = 'C:\\Script\\icd10cm_codes_2017.txt';
 //var filename        = process.argv[4];
 var filename        = "icd10cm_codes_2017.txt";
