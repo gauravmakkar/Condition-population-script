@@ -2,7 +2,7 @@
 var mongoDb         = require('mongodb');
 var mongoClient     = mongoDb.MongoClient;
 
-if(process.argv.length<3){
+if(process.argv.length<5){
 	console.log("Not enough parameters passed")
 	return
 }
@@ -11,7 +11,7 @@ if(process.argv.length<3){
 var url             = process.argv[2];
 //var filename        = 'C:\\Script\\icd10cm_codes_2017.txt';
 //var filename        = process.argv[4];
-var filename        = "./icd10cm_codes_2017.txt";
+var filename        = process.argv[4]?process.argv[4]:"./icd10cm_codes_2017.txt";
 console.log(url)
 mongoClient.connect(url,function(err,db){
     if(err){
