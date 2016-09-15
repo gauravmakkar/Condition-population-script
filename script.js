@@ -12,6 +12,7 @@ var url             = process.argv[1];
 //var filename        = 'C:\\Script\\icd10cm_codes_2017.txt';
 //var filename        = process.argv[4];
 var filename        = "icd10cm_codes_2017.txt";
+console.log(url)
 mongoClient.connect(url,function(err,db){
     if(err){
         console.log('error on connection '+err);
