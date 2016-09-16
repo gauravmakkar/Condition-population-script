@@ -29,6 +29,7 @@ mongoClient.connect(url,function(err,db){
         var rl          = readline.createInterface(instream,outstream);
         var bulk = collection.initializeUnorderedBulkOp();
         console.log('***************Parsing, please wait ...');
+        var i=0
         rl.on('line',function(line){
             try{
 				var arr         = line.split('\t');
@@ -37,7 +38,7 @@ mongoClient.connect(url,function(err,db){
                 //Example
 				var code= arr[0].substr(0,arr[0].indexOf(" "))
 				var text=arr[0].substr(arr[0].indexOf(" "),arr[0].length).trim()
-                bulk.insert({code:code,text:text,desc:text,system:"ICD10"});
+                bulk.insert({_id:+(++i),code:code,text:text,desc:text,system:"ICD10"});
             }
             catch (err){
                 console.log(err);
