@@ -37,7 +37,7 @@ mongoClient.connect(url,function(err,db){
                 //Example
 				var code= arr[0].substr(0,arr[0].indexOf(" "))
 				var text=arr[0].substr(arr[0].indexOf(" "),arr[0].length).trim()
-                bulk.insert({code:code,text:text,description:text,system:"ICD10"});
+                bulk.insert({code:code,text:text,desc:text,system:"ICD10"});
             }
             catch (err){
                 console.log(err);
