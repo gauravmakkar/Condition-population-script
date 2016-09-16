@@ -27,7 +27,7 @@ mongoClient.connect(url,function(err,db){
         var instream    = fs.createReadStream(filename);
         var outstream   = new stream;
         var rl          = readline.createInterface(instream,outstream);
-        var bulk = db.items.initializeUnorderedBulkOp();
+        var bulk = collection.initializeUnorderedBulkOp();
         console.log('***************Parsing, please wait ...');
 
         rl.on('line',function(line){
