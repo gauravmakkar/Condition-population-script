@@ -27,7 +27,7 @@ mongoClient.connect(url,function(err,db){
         var instream    = fs.createReadStream(filename);
         var outstream   = new stream;
         var rl          = readline.createInterface(instream,outstream);
-
+        var bulk = db.items.initializeUnorderedBulkOp();
         console.log('***************Parsing, please wait ...');
 
         rl.on('line',function(line){
@@ -39,7 +39,7 @@ mongoClient.connect(url,function(err,db){
 				var code= arr[0].substr(0,arr[0].indexOf(" "))
 				var text=arr[0].substr(arr[0].indexOf(" "),arr[0].length).trim()
                 console.log({code:code,text:text})
-				var res = collection.insert({code:code,text:text});
+				bulk.insert({code:code,text:text});
             }
             catch (err){
                 console.log(err);
@@ -47,6 +47,7 @@ mongoClient.connect(url,function(err,db){
         });
 
         rl.on('close',function(){
+            bulk.execute()
             db.close();
             console.log('***************completed');
         });
